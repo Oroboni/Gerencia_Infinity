@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Base de Dados: `banco`
 --
-DROP DATABASE banco;
+
 create database banco;
 use banco;
 -- --------------------------------------------------------
@@ -43,11 +43,11 @@ CREATE TABLE IF NOT EXISTS `tabelaimg` (
 --
 
 INSERT INTO `tabelaimg` (`id`, `codigo`, `produto`, `descricao`, `data`, `imagem`) VALUES
-(1, 'Matheus', 'Rua jovenal', 'TI', '2007-02-26', 'matheus.png'),
-(2, 'Carlos', 'Rua espelho', 'VENDAS', '2005-06-25', 'carlos.png'),
-(3, 'Isabella', 'Rua espiral', 'RH', '2006-08-16', 'isa.jpeg'),
-(4, 'Cleitin', 'Rua calor', 'ENTREGAS', '2006-05-01', 'cleitin.jpeg'),
-(5, 'Jusbiscludia', 'Rua inverno', 'GERAL', '2008-05-01', 'julia.jpg');
+(1, 'Matheus', 'Rua jovenal', 'TI', '2007-02-26', 'matheus.jpg'),
+(2, 'Carlos', 'Rua espelho', 'VENDAS', '2005-06-25', 'VinDiesel.jpg'),
+(3, 'Isabella', 'Rua espiral', 'RH', '2006-08-16', 'isa.jpg'),
+(4, 'Cleitin', 'Rua calor', 'ENTREGAS', '2006-05-01', 'Doctor_Who.jpg'),
+(5, 'Jusbiscludia', 'Rua inverno', 'GERAL', '2008-05-01', '1.jpg');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
