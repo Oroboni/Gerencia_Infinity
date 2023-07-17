@@ -86,7 +86,7 @@
 
 
 			// criando a linha do  UPDATE
-			$sqlupdate =  "update tabelaimg set produto='$produto', descricao='$descricao',data='$data', imagem='$imagem' where id=$id";
+			$sqlupdate =  "update tabelaimg set codigo='$codigo', produto='$produto', descricao='$descricao',data='$data', imagem='$imagem' where id=$id";
 
 			// executando instrução SQL
 			$resultado = @mysqli_query($conexao, $sqlupdate);

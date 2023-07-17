@@ -22,7 +22,7 @@
 				align-items: center;
 				width: 80%;
 				height: 80%;
-				padding: 1%;
+				padding: 3%;
 				/* background-color: #5E6183; */
 				box-shadow: 5px 5px 10px rgba(1, 1, 1, 1);
 				display: flex;
@@ -35,6 +35,12 @@
 				height: 70%;
 				position: relative;
 				left:55%;
+			}
+			.botoes{
+				display: flex;
+				position: relative;
+				right: 135%;
+				top:235px;
 			}
 		</style>
 	</head>
@@ -105,7 +111,6 @@
 		?>
 		<div class="container">
 
-			<!-- Formulario -->
 			<form>
 				<div class="mb-3">
 					<label for="id" class="form-label"><b>Id:</b></label>
@@ -115,42 +120,34 @@
 					<label for="codigo" class="form-label"><b>Nome:</b></label>
 					<input type="text" class="form-control bg-dark text-white" disabled name="codigo" disabled value="<?php echo $dados['codigo']; ?>" readonly>
 				</div>
+				
 				<div class="mb-3">
 					<label for="produto" class="form-label"><b>Endereço:</b></label>
 					<input type="text" class="form-control bg-dark text-white" name="produto" disabled value="<?php echo $dados['produto']; ?>">
 				</div>
+
 				<div class="mb-3">
 					<label for="departamento" class="form-label"><b>Departamento:</b></label>
 					<input type="text" class="form-control bg-dark text-white" name="departamento" disabled value="<?php echo $dados['descricao']; ?>">
 				</div>
-
+				
 				<div class="mb-3">
 					<label for="data" class="form-label"><b>Data de Nascimento:</b></label>
 					<input type="date" name="data" class="form-control bg-dark text-white" disabled value="<?php echo convertedata($dados['data']); ?>">
 				</div>
 
-				<label for="id" class="form-label"><b>Id:</b></label>
-				<input type="text"  value="<?php echo $dados['codigo']; ?>" readonly ><br><br>
-
-				<b>Produto:</b> 
-				<input type="text"  maxlength='80' style="width:550px" value="<?php echo $dados['produto']; ?>" readonly ><br><br> <!-- ALTERADO // ATENÇÃO-->
-				<b>Descrição: </b><br>
-				<textarea  rows='3' cols='100' style="resize: none;" readonly ><?php echo $dados['descricao']; ?></textarea><br><br>
-				<b>Data: </b> 
-				<input type="date" value="<?php echo convertedata($dados['data']); ?>" readonly ><br><br> <!-- Foi incluido o convertedata -->
-				<b>Valor: R$ </b>
-				<input type="number" step="0.01" name="valor" value="<?php echo $dados['valor']; ?>" readonly > <br><br>
-				<b>Foto:</b><br>
-				<img src="imagens/<?php echo $imagem; ?>" name="foto" width="100px"> <br><br><!-- Foi incluido -->
-
-					<!-- Voltar e apagar -->
-				<form name="produto" action="excluir.php" method="post">
-					<input type='hidden' name='id' value="<?php echo $id; ?>">
-					<input type='submit' value='Apagar' class="btn btn-outline-danger">&nbsp;&nbsp;
-					<input type='button' onclick="window.location='index.php';" value="Voltar" class="btn btn-secondary"> <!-- Alterado -->
-				</form>
 			</form>
-			<!-- Foto -->
+
+			
+				<div class="btn-group" role="group">
+					<form name="produto" action="excluir.php" method="post" class="botoes">
+						<input type='hidden' name='id' value="<?php echo $id; ?>">
+						<input type='submit' value='Apagar' class="btn btn-outline-danger">&nbsp;&nbsp;
+						<input type='button' onclick="window.location='index.php';" value="Voltar" class="btn btn-secondary"> <!-- Alterado -->
+					</form>
+				</div>
+		
+				
 			<div Class="perfil">
 				<img src="imagens/<?php echo $imagem; ?>" class="atual" name="foto" width="100px"><br><br>
 			</div>

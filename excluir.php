@@ -28,9 +28,33 @@
 			// recuperando 
 			// FOI ALTERADO
 			$id = $_POST['id'];
-
+			$sqlconsulta =  "select imagem from tabelaimg  where id=$id";
+			// executando instrução SQL
+			$resultado = @mysqli_query($conexao, $sqlconsulta);
+			if (!$resultado) {
+				echo '<input type="button" onclick="window.location='."'index.php'".';" value="Voltar"><br><br>';
+				die('<b>Query Inválida:</b>' . @mysqli_error($conexao)); 
+			} else {
+				$num = @mysqli_num_rows($resultado);
+				if ($num==0){
+				echo "<b>Código: </b>não localizado !!!!<br><br>";
+				echo '<input type="button" onclick="window.location='."'exclusao.php'".';" value="Voltar"><br><br>';
+				exit;		
+				}else{
+					$dados=mysqli_fetch_array($resultado);
+				}
+			}
+			$foto = "SemImagem.png";
+			if (!empty($dados['imagem'])){
+				$foto = $dados['imagem'];
+				$fotoLocal = "imagens/" . $foto;
+				if($fotoLocal!="SemImagem.png"){unlink($fotoLocal);}
+				
+			}
+			
 			// criando a linha do  DELETE
 			// FOI ALTERADO
+
 			$sqldelete =  "delete from  tabelaimg where id = $id ";
 			
 			// executando instrução SQL
@@ -40,6 +64,7 @@
 				die('<b>Query Inválida:</b>' . @mysqli_error($conexao)); 
 			} else {
 				echo "<h4>Registro Excluído com Sucesso.</h4>";
+				
 			} 
 			mysqli_close($conexao);
 		?>
