@@ -6,8 +6,8 @@
 	<title> Gerencia - infinity </title>
 
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="javascript/bootstrap.min.js"></script>
 	<script src="javascript/pesquisa.js"></script>
 </head>
 
